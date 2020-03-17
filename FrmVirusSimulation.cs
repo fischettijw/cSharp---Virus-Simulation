@@ -12,6 +12,10 @@ namespace cSharp___Virus_Simulation
 {
     public partial class FrmVirusSimulation : Form
     {
+        FlowLayoutPanel FlpSimualtionGrid;
+        static int clientWidth = 400;
+        static int clientHeight = clientWidth + 100;
+
         public FrmVirusSimulation()
         {
             InitializeComponent();
@@ -19,7 +23,8 @@ namespace cSharp___Virus_Simulation
 
         private void FrmVirusSimulation_Load(object sender, EventArgs e)
         {
-                       CusttomizeForm();
+            CusttomizeForm();
+            CreateFlowLayoutPanel();
         }
 
         private void CusttomizeForm()
@@ -27,8 +32,6 @@ namespace cSharp___Virus_Simulation
             this.Hide();
             this.Text = "Coronavirus - Small Gathering Simulation";
 
-            int clientWidth = 400;
-            int clientHeight = clientWidth + 100;
             this.ClientSize = new Size(clientWidth, clientHeight);
             this.MaximizeBox = false;
             this.MaximumSize = new Size(this.Width, this.Height);
@@ -44,6 +47,17 @@ namespace cSharp___Virus_Simulation
             this.Location = new Point((sW - fW) / 2, (sH - fH) / 2);
 
             this.Show();
+        }
+
+        private void CreateFlowLayoutPanel()
+        {
+            FlpSimualtionGrid = new FlowLayoutPanel()
+            {
+                Size = new Size(clientWidth, clientWidth),
+                Location = new Point(0, 0),
+                BackColor = Color.Aqua,
+                Visible = true,
+            };
         }
     }
 }
