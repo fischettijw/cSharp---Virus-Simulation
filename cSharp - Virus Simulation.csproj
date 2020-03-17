@@ -83,5 +83,8 @@
   <ItemGroup>
     <None Include="Resources\virus image.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\virus image.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
