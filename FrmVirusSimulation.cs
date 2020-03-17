@@ -12,9 +12,12 @@ namespace cSharp___Virus_Simulation
 {
     public partial class FrmVirusSimulation : Form
     {
+        Button[] btnRC;
         FlowLayoutPanel FlpSimualtionGrid;
-        static int clientWidth = 400;
+        static int clientWidth = 600;
         static int clientHeight = clientWidth + 100;
+        static int gridSize = 10;
+        static int numberOfButtons = gridSize * gridSize;
 
         public FrmVirusSimulation()
         {
@@ -54,10 +57,25 @@ namespace cSharp___Virus_Simulation
             FlpSimualtionGrid = new FlowLayoutPanel()
             {
                 Size = new Size(clientWidth, clientWidth),
-                Location = new Point(0, 0),
-                BackColor = Color.Aqua,
-                Visible = true,
-            };
+                Location = new Point(0, 0)
+                         };
+            this.Controls.Add(FlpSimualtionGrid);
+
+            int btnSize = Convert.ToInt32(clientWidth /gridSize);
+            btnRC = new Button[numberOfButtons];
+            for (int i = 0; i < numberOfButtons; i++)
+            {
+                btnRC[i] = new Button()
+                {
+                    Size = new Size(btnSize, btnSize),
+                    BackColor = Color.LightPink,
+                    Margin = new Padding(0, 0, 0, 0),
+                    Padding = new Padding(0, 0, 0, 0)
+                };
+                FlpSimualtionGrid.Controls.Add(btnRC[i]);
+            }
+
+
         }
     }
 }
