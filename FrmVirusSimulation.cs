@@ -16,7 +16,7 @@ namespace cSharp___Virus_Simulation
         FlowLayoutPanel FlpSimualtionGrid;
         static int clientWidth = 600;
         static int clientHeight = clientWidth + 100;
-        static int gridSize = 10;
+        static int gridSize = 25;
         static int numberOfButtons = gridSize * gridSize;
 
         public FrmVirusSimulation()
@@ -58,10 +58,10 @@ namespace cSharp___Virus_Simulation
             {
                 Size = new Size(clientWidth, clientWidth),
                 Location = new Point(0, 0)
-                         };
+            };
             this.Controls.Add(FlpSimualtionGrid);
 
-            int btnSize = Convert.ToInt32(clientWidth /gridSize);
+            int btnSize = Convert.ToInt32(clientWidth / gridSize);
             btnRC = new Button[numberOfButtons];
             for (int i = 0; i < numberOfButtons; i++)
             {
